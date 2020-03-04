@@ -27,11 +27,7 @@ final class MoviesViewModelF: ObservableObject {
        }
   
     private var cancellableSet: Set<AnyCancellable> = []
-    deinit {
-        for cancell in cancellableSet {
-            cancell.cancel()
-        }
-    }
+   
     /*
      // Without Generic
         init() {

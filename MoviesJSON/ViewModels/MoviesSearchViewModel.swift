@@ -37,11 +37,5 @@ final class MoviesSearchViewModel: ObservableObject {
     }
     
     private var cancellableSet: Set<AnyCancellable> = []
-    deinit {
-        for cancell in cancellableSet {
-            cancell.cancel()
-        }
-    }
-     
 }
 

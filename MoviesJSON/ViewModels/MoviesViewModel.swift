@@ -24,11 +24,12 @@ final class MoviesViewModel: ObservableObject {
    }
     
     private var cancellableSet: Set<AnyCancellable> = []
-    deinit {
+/*    deinit {
         for cancell in cancellableSet {
             cancell.cancel()
         }
     }
+ */
 }
 
    

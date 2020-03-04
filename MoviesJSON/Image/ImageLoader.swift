@@ -57,6 +57,7 @@ final class ImageLoader: ObservableObject {
             .assign(to: \.image, on: self)
             .store(in: &self.cancellableSet)
     }
+    private var cancellableSet: Set<AnyCancellable> = []
     
     private func fetchImage(for url: URL?)
                             -> AnyPublisher <UIImage?, Never> {
@@ -71,7 +72,6 @@ final class ImageLoader: ObservableObject {
                 .eraseToAnyPublisher()                         // 6
     }
     
-    private var cancellableSet: Set<AnyCancellable> = []
     deinit {
         for cancell in cancellableSet {
             cancell.cancel()
